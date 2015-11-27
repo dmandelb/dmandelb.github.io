@@ -1,0 +1,21 @@
+body {
+	background-color: #465c7d;
+}
+#coverphoto {
+	float: left;
+}
+nav {
+	float: right;
+}
+a {
+	color: white;
+}
+a:hover {
+	text-decoration: none;
+	color: navy;
+}
+h1 {
+	text-align: center;
+	font-family: 'Roboto Condensed', sans-serif;
+	color: white;
+}
