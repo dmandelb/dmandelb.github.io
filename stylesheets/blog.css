@@ -1,0 +1,23 @@
+html {
+	background-color: #000000;
+	color: green;
+}
+header {
+	font-family: Orbitron;
+}
+h1 {
+	font-family: Orbitron;
+	color: green;
+}
+body {
+	background-color: #000000;
+	font-family: Monda;
+}
+a	{
+	color: green;
+}
+a:hover {
+	font-weight: bold;
+	text-decoration: none;
+	color: green;
+}
