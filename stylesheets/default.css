@@ -5,13 +5,9 @@ body {
 	margin-left: 5%;
 }
 nav {
-	margin-right: 30%;
+	margin-right: 15%;
 	margin-top: 25%;
 	float: right;
-	height: 6em;
-	background-color: #000080;
-	border-radius: 5px;
-	border: 1px solid white;
 }
 a {
 	color: white;
