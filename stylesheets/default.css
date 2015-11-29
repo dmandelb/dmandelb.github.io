@@ -2,17 +2,23 @@ body {
 	background-color: #465c7d;
 }
 #coverphoto {
-	float: left;
+	margin-left: 5%;
 }
 nav {
+	margin-right: 30%;
+	margin-top: 25%;
 	float: right;
+	height: 6em;
+	background-color: #000080;
+	border-radius: 5px;
+	border: 1px solid white;
 }
 a {
 	color: white;
 }
 a:hover {
 	text-decoration: none;
-	color: navy;
+	color: orange;
 }
 h1 {
 	text-align: center;
