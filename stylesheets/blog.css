@@ -1,34 +1,35 @@
 html {
 	background-color: #000000;
-	color: green;
+	color: #42f80a;
 }
 header {
 	font-family: Orbitron;
 }
 h1 {
 	font-family: Orbitron;
-	color: green;
+	color: #42f80a;
 }
 body {
 	background-color: #000000;
 	font-family: Monda;
 }
 a	{
-	color: green;
+	color: #42f80a;
 }
 a:hover {
 	font-weight: bold;
 	text-decoration: none;
-	color: green;
+	color: #ffffff;
 }
-#alpha {
-	position: absolute;
+.alpha {
+	/*position: fixed;*/
+	max-width: 50%;
+	margin-left: 24%;
+	margin-right: 24%;
+}
+nav {
+	position: fixed;
+	right: 0px;
 	top: 0px;
-	left: 0px;
-	height: 100%;
-	width: 25%;
-	/*background-color: orange;
-}
-#beta {
-	position: fixed;*/
+	margin: 2em 10% 0 0;
 }
