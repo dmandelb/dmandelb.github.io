@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Monda' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
+	<title>Much Blog. So Fancy. Wow.</title>
+</head>
+<body>
+	<header>
+    <h1>cat MyMind >> YourMind</h1>
+    <h2 class="alpha">Enumerable Methods<br>12/13/15</h2>
+    <h3 class="alpha">Iteration Without Loops!</h3>
+  </header>
+  <div class="alpha">
+    <p>
+      Loops are great. Loops are fantastic and fun and one of the first things you learn about while learning coding that really makes you say "Oh wow, that's cool!" Or at least it was for me. But what if, when you had a group of things in an array or a hash (see <a href="arrays-hashes.html">last week's entry</a> if you're unclear about those), you didn't have to use a loop to do something to everything? Or at least not a loop in the same way, with all of the clunky tracking variables and parameters and all that housekeeping. Now we have the wonder of enumerable methods! They slice, they...don't dice, but they know when to stop on their own!
+    </p>
+    <p>
+      To start with, you have your basic ".each" method in Ruby. When you use this on an array or a hash, it always comes with a block of code after it. What you are telling your interpreter is that you want to do that block of code to each element of your collection object (array/hash). The ".each" method is the basis upon which all other enumerable methods are built, and they can do all sorts of things just on their own. I wasn't kidding about the slicing (but we're not getting into that today). Here's what your basic ".each" enumerable might look like.<script src="https://gist.github.com/dmandelb/658ce8620f9e3018453d.js"></script> In this code, "my_array" is the variable that refers back to an array, in "|x|" we're telling the code block that x is what we're going to use to represent our element (if you were to use this on a hash, you would need two variables in there, one for the key and one for the value), and then we tell it what we want to do with/to x. So what we're telling it to do here is to multiply each element in the array by 3. Nice and straightforward, right?
+    </p>
+    <p>
+      Well let's take a look at something a little more complex. I told you they could do more than that. Let's say we want to get picky. We've got all these elements in this collection, but we only really need some of them. We've got an enumerable for that. Actually, we've got four. It all depends on how you're feeling. Would you like to select (.select) some elements, or would you like to reject (.reject) them? And are you thinking you'd like to hang onto the others just in case they'll be useful, but just don't need them right now? Or are you just so done with them? Well if you're just so done you can't even stand for them to be around, just get a little loud. Adding an exclamation point to the end of the previous two methods (making them .select! and .reject!, respectively) will permanently alter the collection object, leaving behind only what you tell it to, while the methods without the exclamation point will yield a new collection object with the specified directions followed, and returning the original one unharmed. 
+    </p>
+    <p>
+      "But Devin," I hear you cry, "What if we want to iterate over a collection more than once? Surely we'd have to use a loop then, wouldn't we?" You'd think so, wouldn't you? Of course you would, you just asked me. Well, it just so happens that there's an enumerable method for that! Not only does this miraculous thing iterate over your entire collection object, it does it as many times as you tell it to! It's called .cycle, and here's what it looks like: <script src="https://gist.github.com/dmandelb/81f2c03676e54ac8b589.js"></script> So I threw in a little extra here. I mentioned a hash earlier, so I used one this time. The first line is just spent defining the hash, so you can see what it is I'm talking about. The keys and values are separated by the "=>" indicator, and the pairs are separated by commas. They are all strings. On the second line, notice that .cycle is used on my_hash. Furthermore, n defines how many times the cycle is run. We then go on to define our variables, which Ruby understands to be the key and the value simply by the order they are in. I like to use k for key and v for value for reasons of maximum clarity, but everyone has their own preferences. Next we see that I only actually use v, but we still had to define both so it would know which I wanted to do anything to. What I'm doing is string addition, which will add "+H20" to every value string in the hash, just splicing it on there at the end. It's a good thing we're just doing string addition, too. If we were doing chemical addition, this would get explosive very quickly, and I don't think we'd get to cycle through three times...
+    </p>
+  </div>
+  <nav>
+    <a href="dmandelb.github.io">Home</a><br><a href="dmandelb.github.io/blog/index.html">Blog Index</a>
+  </nav>
+</div>
+</body>
+</html>
