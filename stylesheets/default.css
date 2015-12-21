@@ -1,14 +1,19 @@
+html {
+	font-family: 'Roboto Condensed', sans-serif;
+	color: white;
+}
 body {
 	background-color: #465c7d;
 }
-#coverphoto {
+.photo {
 	margin-left: 5%;
+
 }
 nav {
-	margin-right: 15%;
-	margin-top: 15%;
-	float: right;
+	right: 5%;
+	top: 15%;
 	text-align: center;
+	position: fixed;
 }
 a {
 	color: white;
@@ -19,9 +24,19 @@ a:hover {
 }
 h1 {
 	text-align: center;
-	font-family: 'Roboto Condensed', sans-serif;
-	color: white;
 }
 ul {
 	list-style: none;
+}
+
+p {
+	width: 50%;
+}
+.navbar {
+	height: 100%;
+	width: 20%;
+	position: fixed;
+	background-color: #36465d;
+	top: 0px;
+	right: 0px;
 }
