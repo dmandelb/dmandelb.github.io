@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Monda' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
+	<title>SQL Injections</title>
+</head>
+<body>
+	<header>
+    <h1>cat MyMind >> YourMind</h1>
+    <h2 class="alpha">SQL Injections<br>1/9/16</h2>
+    <h3 class="alpha">Little Bobby Tables</h3>
+  </header>
+  <div class="alpha">
+    <a href="https://xkcd.com/327/"><img src="http://imgs.xkcd.com/comics/exploits_of_a_mom.png"></a>
+    <p>
+      Well gee whiz, how did that happen? And what did she mean when she referenced sanitizing database inputs? Buckle up, 'cause you're about to find out! 
+    </p>
+    <p>
+      As for how it happened, that's what an Injection is in SQL. Little Bobby Tables' Mom has been waiting for this to happen. This was either when her son was entered into the school's database, or when his information was accessed within the database for the first time. Either way, his name had to have been entered as a string. The school is apparently using a straight variable substitution for student names for this program, so the program just dropped his name straight into the SQL command, which would have opened up with a single quote mark, which the one at the end of his first name would close. The close parentheses would close out any other statement that might be open, and then the semicolon ends the statement, making SQL think that whatever it had to do with the variable is now done with 'Robert' and it can move on. Next up is DROP TABLE Students; which directs SQL to delete any table it has in the directory named Students. You can imagine this would be rather problematic for a school. Whoops! (There are other types of mayhem you could potentially cause, but we'll move on.)
+    </p>
+    <p>
+      So how can we prevent this, aside from manually examining every single bit of data that will ever go into a database, including anything potentially added by a user? You can't ban semicolons or quote marks, especially now that we're at a point in cybersecurity where passwords have to contain a special character (hardly the best possible solution, but that's a matter for another blog entry). Fortunately, SQL has a functionality built in to protect against this sort of thing. Observe: <pre>txtNam = getRequestString("CustomerName");
+txtAdd = getRequestString("Address");
+txtCit = getRequestString("City");
+txtSQL = "INSERT INTO Customers (CustomerName,Address,City) Values(@0,@1,@2)";
+db.Execute(txtSQL,txtNam,txtAdd,txtCit);</pre> (<a href="http://www.w3schools.com/sql/sql_injection.asp">Source</a>)
+    </p>
+    <p>
+      The @ symbol identifies what is called a parameter, and changes this series of statements from what would otherwise be a simple variable substitution into a controlled, safe (and as Bobby Tables' Mom would say, sanitized) data input. A parameter is checked by SQL to be correct for its column and able to be treated literally, and does not contain a SQL command. 
+    </p>
+    <p>
+      Congratulations, you are now safe from little Bobby Tables and more importantly, his mother. 
+    </p>
+  </div>
+  <nav>
+    <a href="../index.html">Home</a><br><a href="index.html">Blog Index</a>
+  </nav>
+</body>
+</html>
