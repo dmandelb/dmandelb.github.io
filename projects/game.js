@@ -21,7 +21,7 @@ var getHit = function () {
 		document.getElementById("text_box").innerHTML += (jerkFace.name + " has hit you! You are down to " + rileyJones.HP + " ")
 	} 
 	else{
-		document.getElementById("text_box").innerHTML += (jerkFace.name + " has missed you! Ballet school has paid off! ")
+		document.getElementById("text_box").innerHTML += (jerkFace.name + " has missed you! Ballet school has paid off! You are still at " + rileyJones.HP + ".")
 	};
 	if (rileyJones.HP <= 0) {
 		document.getElementById("text_box").innerHTML += ("You have died. " + jerkFace.name + " is now doing a very lewd victory dance on your corpse. ")
@@ -37,7 +37,7 @@ var attack = function() {
 		document.getElementById("text_box").innerHTML = "You have hit " + jerkFace.name + "! " + jerkFace.name + " is now at " + jerkFace.HP + "! "
 	} 
 	else{
-		document.getElementById("text_box").innerHTML = ("You have missed " + jerkFace.name + "! Whoops! ")
+		document.getElementById("text_box").innerHTML = ("You have missed " + jerkFace.name + "! His HP is still at " + jerkFace.HP + ". Whoops! ")
 	};
 	if (jerkFace.HP <= 0) {
 		document.getElementById("text_box").innerHTML += ("You have beaten " + jerkFace.name + "! Great songs will be sung of your victory this day! ");
@@ -52,7 +52,7 @@ var heal = function() {
 		rileyJones.HP += 30;
 		document.getElementById("text_box").innerHTML = ("Your HP has increased to " + rileyJones.HP + ". You feel a bit better. ")
 	} else{
-		document.getElementById("text_box").innerHTML = ("You have failed to heal yourself. Maybe you should have paid better attention during Medic training. ")
+		document.getElementById("text_box").innerHTML = ("You have failed to heal yourself. You are still at " + rileyJones.HP + ". Maybe you should have paid better attention during Medic training. ")
 	};
 	document.getElementById("text_box").innerHTML += (jerkFace.name + " is now attacking! You'd better be ready! ")
 	getHit();
