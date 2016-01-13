@@ -20,13 +20,13 @@
     </p>
     <p>
       So we're in Ruby. We want to loop a thing. And by this I mean we want to do a thing a certain number of times, based on a condition. A nice simple, straightforward way of doing this is to establish a counter variable (which we will conveniently name "counter" instead of "x" because descriptive variables are better for programming than math variables, I keep reminding myself). Some people like to use UNLESS loops. I myself find that the mental grammar that goes along with that gets a little confusing, so unless I have to, I'd rather not. (See what I did there?) I prefer WHILE loops. That might look a little something like this:
-      <pre><code>
+      <pre>
         counter = 0
         while counter < 42
           p "What do you get when you multiply six by nine?"
           counter = counter + 1
         end
-      </code></pre>
+      </pre>
       And what we've got there is...going to be an exceedingly long output, but it's accurate code, and I like references, so I don't know what to tell you. Don't run that unless you want that string printed out 42 times. So what we've got there is in the first line we're declaring our counting variable, in the second line we're setting the condition upon which our code will stop looping. (If you never meet that condition, your code will loop forever, or at least until your computer gets sick of your BS and shuts it down.) The third and fourth lines are what are considered inside our loop, and the fifth line is the end of the loop, at which point it will check the beginning of the loop again to see if the condition still evaluates to true. If nothing ever happens inside the loop to alter part of the condition, it will never change, and your computer will definitely lose patience with you. Therefore, in line four, we increment counter up by one. (There are shortcuts for doing this, like counter +=1 and counter ++, but this is the purest form for showing what is happening.)
     </p>
     <p>

@@ -18,7 +18,17 @@
     <p>
       In Ruby, a Class is an object. That shouldn't come as a huge surprise, because really, everything is an object in Ruby. The key, though is that a Class is also a category of objects. More specifically, a Class is a kind of object that does something different than any other object, and it includes objects like methods that are useful to it, and acts as a sort of guide to your Ruby interpreter, telling it "Yes, this is a thing that can be done to this thing."
     </p>
-    <script src="https://gist.github.com/dmandelb/43cefe061f5a1033db63.js"></script>
+    <pre>
+      class Thingamabob
+        def initialize(doodad)
+          @whatchamacallit = doodad + "This has been a created thing"
+        end
+
+        def say_hey
+          puts @whatchamacallit
+        end
+      end
+    </pre>
     <p>
       Within a class definition, the first thing you always have to do is initialize the instance of the class you'll be using. This tells the interpreter exactly what it should be doing when you create a new object of this type. That's what initialize is for, and if there were to be any arguments passed in when a new instance is created, you would tell the initialize method to expect those arguments. As shown above, the argument doodad for initialize would be given when a new Thingamabob is created. You'll also notice that the variable I initialized in initialize has an @ in front of it. This designates it as an instance variable, which allows it to hold information throughout any use of the instance of the class in which it is defined. Instance variables don't tend to get seen much outside of class definitions, but they are extremely useful at passing information between methods within a class. Note how the instance variable shows up in the second method defined within the class. This allows that other method to make use of the information stored within that instance variable. It's important to note that instance variables only carry information within one instance of a class. Once you create a new object of your class, any instance variables will be reset for that new class object, but will still retain their values for the previous instance of the class object. 
     </p>
