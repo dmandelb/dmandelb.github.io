@@ -32,6 +32,6 @@ nav {
 	top: 0px;
 	margin: 2em 10% 0 0;
 }
-img {
+a > img {
 	max-width: 100%;
 }
