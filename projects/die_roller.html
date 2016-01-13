@@ -9,7 +9,24 @@
 <body>
 	<h1>Projects</h1>
 	<h2>Die Roller</h2>
-	<script src="https://gist.github.com/dmandelb/84e3d5302981ccda240c.js"></script>
+	<pre>
+		class Die
+		  def initialize(sides)
+			unless sides > 1
+			  raise ArgumentError.new("You can't roll a die without any sides, silly!")
+			end
+			@sides = sides
+		  end
+
+		  def sides
+		  	@sides
+		  end
+
+		  def roll
+		  	cast_spell = rand(@sides) + 1
+		  end
+		end	  
+	</pre>
 	<div class="navbar">
 		<nav>
 			<ul>
