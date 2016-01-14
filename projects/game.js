@@ -15,50 +15,82 @@ var jerkFace = {
 	Defense: 9,
 	dead: false
 }
+var game = {
+	over: false,
+	reset: function() {
+		rileyJones.HP = 100;
+		jerkFace.HP = 100;
+		jerkFace.dead = false;
+		game.over = false;
+		$("#text_box").text("Are you ready?");
+	},
+
+}
 var getHit = function () {
 	if ((Math.random()*20)+1 >= rileyJones.Defense) {
 		rileyJones.HP -= jerkFace.Damage;
-		document.getElementById("text_box").innerHTML += (jerkFace.name + " has hit you! You are down to " + rileyJones.HP + " ")
+		$("#text_box").append(jerkFace.name + " has hit you! You are down to " + rileyJones.HP + " ");
 	} 
 	else{
-		document.getElementById("text_box").innerHTML += (jerkFace.name + " has missed you! Ballet school has paid off! You are still at " + rileyJones.HP + ".")
+		$("#text_box").append(jerkFace.name + " has missed you! Ballet school has paid off! You are still at " + rileyJones.HP + ".");
 	};
 	if (rileyJones.HP <= 0) {
-		document.getElementById("text_box").innerHTML += ("You have died. " + jerkFace.name + " is now doing a very lewd victory dance on your corpse. ")
+		game.over = true;
+		$("#text_box").append("You have died. " + jerkFace.name + " is now doing a very lewd victory dance on your corpse. ");
 	};
 }
 var attack = function() {
-	if (jerkFace.HP <= 0) {
-		jerkFace.dead = true;
-		document.getElementById("text_box").innerHTML = ("You already defeated " + jerkFace.name + ". Beating a defeated enemy is a war crime. Don't be that person. ")
+	if (game.over == true) {
+		$("#text_box").append("The game is over. Please reset. ");
 	}
 	else if ((Math.random()*20)+1 >= jerkFace.Defense) {
 		jerkFace.HP -= rileyJones.Damage;
-		document.getElementById("text_box").innerHTML = "You have hit " + jerkFace.name + "! " + jerkFace.name + " is now at " + jerkFace.HP + "! "
+		$("#text_box").text("You have hit " + jerkFace.name + "! " + jerkFace.name + " is now at " + jerkFace.HP + "! ");
 	} 
 	else{
-		document.getElementById("text_box").innerHTML = ("You have missed " + jerkFace.name + "! His HP is still at " + jerkFace.HP + ". Whoops! ")
+		$("#text_box").text("You have missed " + jerkFace.name + "! His HP is still at " + jerkFace.HP + ". Whoops! ");
 	};
-	if (jerkFace.HP <= 0) {
-		document.getElementById("text_box").innerHTML += ("You have beaten " + jerkFace.name + "! Great songs will be sung of your victory this day! ");
+	if (jerkFace.HP <= 0 && game.over == false) {
+		jerkFace.dead = true;
+		game.over = true;
+		$("#text_box").text("You have beaten " + jerkFace.name + "! Great songs will be sung of your victory this day! ");
 	}
-	else {
+	else if (jerkFace.HP > 0 && game.over == false) {
 		getHit();
 	};
 }
 
 var heal = function() {
-	if ((Math.random()*20)+1 >= rileyJones.Healing) {
+	if (game.over) {
+		$("#text_box").append("The game is already over. Please reset.")
+	}
+	else if ((Math.random()*20)+1 >= rileyJones.Healing) {
 		rileyJones.HP += 30;
-		document.getElementById("text_box").innerHTML = ("Your HP has increased to " + rileyJones.HP + ". You feel a bit better. ")
+		$("#text_box").text("Your HP has increased to " + rileyJones.HP + ". You feel a bit better. ");
 	} else{
-		document.getElementById("text_box").innerHTML = ("You have failed to heal yourself. You are still at " + rileyJones.HP + ". Maybe you should have paid better attention during Medic training. ")
+		$("#text_box").text("You have failed to heal yourself. You are still at " + rileyJones.HP + ". Maybe you should have paid better attention during Medic training. ");
 	};
-	document.getElementById("text_box").innerHTML += (jerkFace.name + " is now attacking! You'd better be ready! ")
-	getHit();
+	if (game.over == false) {
+		$("#text_box").append(jerkFace.name + " is now attacking! You'd better be ready! ");
+		getHit();
+	};
 }
 
-var offense = document.getElementById('attack_button');
-var defense = document.getElementById('heal_button');
-offense.onclick = attack;
-defense.onclick = heal;
+// var offense = $("#attack_button");
+// var defense = $("#heal_button");
+// offense.onclick = attack;
+// defense.onclick = heal;
+$(document).ready(function(){
+	$("#attack_button").click(function(e){
+		e.preventDefault;
+		attack();
+	});
+	$("#heal_button").click(function(d){
+		d.preventDefault;
+		heal();
+	});
+	$("#reset_button").click(function(x){
+		x.preventDefault;
+		game.reset();
+	});
+});
