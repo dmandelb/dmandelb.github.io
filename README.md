@@ -1,1 +1,0 @@
-# dmandelb.github.io
