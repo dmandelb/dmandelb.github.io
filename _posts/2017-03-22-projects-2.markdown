@@ -1,0 +1,12 @@
+---
+layout: default
+img: sudoku.png
+category: Projects
+title: Sudoku Solver
+description: |
+---
+  A Ruby Sudoku Solver that takes any valid puzzle input by the user and returns the solved puzzle. It uses two different sudoku logic approaches as well as a recursive guessing mechanism when the logic proves insufficient. It is capable of solving any sudoku puzzle in seconds, even the puzzle that was designed to be as hard as mathematically possible.
+  <br>
+  [See the code here!](https://github.com/stevenking86/sudoku_solver)
+  <br>
+  [See it in action here!](https://shrouded-harbor-54304.herokuapp.com/)

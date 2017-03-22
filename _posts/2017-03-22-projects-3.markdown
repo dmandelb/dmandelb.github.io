@@ -1,0 +1,12 @@
+---
+layout: default
+img: squirrel.png
+category: Projects
+title: Rate My Squirrel
+description: |
+---
+  A Rails photo rating site in which users post photos for other users to rate. The rating function is set up with jQuery to preserve a single-page experience on the photos.
+  <br>
+  [See the code here!](https://github.com/dmandelb/rate_my_squirrel)
+  <br>
+  [See it in action here!](http://rate-my-squirrel.herokuapp.com/)
