@@ -1,0 +1,9 @@
+---
+layout: default
+img: preview.jpg
+category: Projects
+title: Walkabout
+description: |
+---
+  A React Native app built for iOS that provides an audio tour experience by playing narrated audio content at pre-selected locations, using a custom geofencing algorithm. We used Location Services for geolocation, and the MapView API to display the user's location with respect to our curated monuments. We recorded our own original audio content using GarageBand. <br>
+  [See the code here!](https://github.com/dmandelb/Walkabout)
