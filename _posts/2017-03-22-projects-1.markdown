@@ -1,9 +1,12 @@
 ---
 layout: default
-img: preview.jpg
+img: CreatureFeature.png
 category: Projects
-title: Walkabout
+title: Creature Feature
 description: |
 ---
-  A React Native app built for iOS that provides an audio tour experience by playing narrated audio content at pre-selected locations, using a custom geofencing algorithm. We used Location Services for geolocation, and the MapView API to display the user's location with respect to our curated monuments. We recorded our own original audio content using GarageBand. <br>
-  [See the code here!](https://github.com/dmandelb/Walkabout)
+  A React app for Dungeons and Dragons 5th Edition monster reference. It makes use of the [Open5e api](https://open5e.com/), and allows filtering of creatures by multiple inclusive criteria, with the most relevant information displayed by default and more available at a click. It has responsive design, accommodating a wide range of screen sizes including mobile.
+  <br>
+  [See the code here!](https://github.com/dmandelb/creature-feature)
+  <br>
+  [See it in action here!](https://creature-feature.herokuapp.com/)
